@@ -1,0 +1,81 @@
+\documentclass[]{article}
+
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{titling}
+\usepackage{enumerate}
+
+\definecolor{qcolor}{rgb}{0.3, 0.3, 0.3}
+\definecolor{acolor}{rgb}{0.0, 0.40, 0.40}
+\definecolor{tcolor}{rgb}{0.0, 0.25, 0.5}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\newcounter{qcounter}[section]
+
+\renewcommand\thesection{Reviewer \#\arabic{section}}
+\newcommand\reviewer{\section{}}
+\newenvironment{question}{\noindent\ignorespaces\textbf{\stepcounter{qcounter}Q\arabic{section}.\theqcounter)}\color{qcolor}\hspace*{.2cm}}{} 
+\newenvironment{answer}{\newline\noindent\ignorespaces\textbf{A\arabic{section}.\theqcounter)}\color{acolor}\hspace*{.2cm}}{}
+\newenvironment{action}{\newline\noindent\ignorespaces\textbf{T\arabic{section}.\theqcounter)}\color{tcolor}\hspace*{.2cm}}{\\}
+
+\newcommand\red[1]{{\color{red}#1}}
+\newcommand\TODO{\red{TODO}}
+
+%opening
+\title{Q\& A\& A}
+\author{Biagio Peccerillo}
+
+\begin{document}
+	
+\begin{center}
+{\huge	\textbf{Question \& Answer \& Action} \\[.5em]}
+{\Large \theauthor \\}
+\end{center}
+\vspace*{1cm}
+{\Large\noindent \textbf{Legend} \\} 
+
+\noindent \textbf{Q} = Question \\
+\textbf{A} = Answer \\
+\textbf{T} = Action
+	
+% ################ REVIEWER 1 ################
+\reviewer
+\begin{question}
+There is nothing to change here, well done!
+\end{question}
+\begin{answer}
+We are deeply thankful with the reviewer for their appreciation.
+\end{answer}
+\begin{action}
+Nothing to do!
+\end{action}
+
+% ################ REVIEWER 2 ################
+\reviewer
+\begin{question}
+For the whole article, the English language could be improved.
+\end{question}
+\begin{answer}
+We agree with the reviewer, our English is rather poor.
+\end{answer}
+\begin{action}
+We did our best to improve the English language in the whole paper.
+\end{action}
+
+\begin{question}
+The comparison with state-of-the-art could be improved.
+\end{question}
+\begin{answer}
+We thank the reviewer for pointing this out. Due to space reasons, we kept that section rather terse. However, we would like to point the reviewer to \cite{phast}, where we did a more complete analysis of the state-of-the-art.
+\end{answer}
+\begin{action}
+We added a reference to \cite{phast} in the text to point the reader to that paper's Related Works section.
+\end{action}
+
+% ################ BIBLIOGRAPHY ################
+\bibliographystyle{IEEEtran}
+\bibliography{bibliography}
+	
+\end{document}
