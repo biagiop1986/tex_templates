@@ -1,10 +1,14 @@
 \documentclass[]{article}
 
+\usepackage{bookmark}
+\usepackage{hyperref}
 \usepackage{xcolor}
 \usepackage{array}
 \usepackage{graphicx}
 \usepackage{titling}
 \usepackage{enumerate}
+
+\hypersetup{colorlinks=false,linkcolor=black,urlcolor=black,bookmarksopen=true,bookmarksdepth=-1,hidelinks}
 
 \definecolor{qcolor}{rgb}{0.3, 0.3, 0.3}
 \definecolor{acolor}{rgb}{0.0, 0.40, 0.40}
@@ -15,7 +19,7 @@
 \newcounter{qcounter}[section]
 
 \renewcommand\thesection{Reviewer \#\arabic{section}}
-\newcommand\reviewer{\section{}}
+\newcommand\reviewer{\section{}\pdfbookmark[section]{Reviewer \#\arabic{section}}{Reviewer \#\arabic{section}}}
 \newenvironment{question}{\noindent\ignorespaces\textbf{\stepcounter{qcounter}Q\arabic{section}.\theqcounter)}\color{qcolor}\hspace*{.2cm}}{} 
 \newenvironment{answer}{\newline\noindent\ignorespaces\textbf{A\arabic{section}.\theqcounter)}\color{acolor}\hspace*{.2cm}}{}
 \newenvironment{action}{\newline\noindent\ignorespaces\textbf{T\arabic{section}.\theqcounter)}\color{tcolor}\hspace*{.2cm}}{\\}
